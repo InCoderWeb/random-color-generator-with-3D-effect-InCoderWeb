@@ -1,0 +1,146 @@
+/* --------------------- Created By InCoder --------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.colorWrapper {
+  height: 12rem;
+  padding: 1rem;
+  min-width: 10rem;
+  overflow: hidden;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 18px 0px #0000004d;
+}
+
+.colorWrapper > span {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  user-select: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  content: "Click to Copy!";
+  background-color: #20202061;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.colorWrapper:hover > span {
+  opacity: 1;
+}
+
+.colorWrapper .color {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.colorWrapper .color span {
+  bottom: 1.21rem;
+  user-select: none;
+  position: absolute;
+}
+
+.refreshColors {
+  border: 0px;
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1.2rem;
+  position: relative;
+  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  transform: scale(0.85);
+  text-decoration: none;
+  background-position: 5rem;
+  text-transform: capitalize;
+  background-color: #b91a58;
+}
+
+.refreshColors:focus {
+  outline: none;
+}
+
+.refreshColors::before {
+  top: 0%;
+  content: "";
+  left: -100%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  position: absolute;
+  transition: left 0.4s;
+  background-color: #202020;
+}
+
+.refreshColors:hover::before {
+  left: 0%;
+}
+
+.copyMsg {
+  z-index: 2;
+  left: 1rem;
+  opacity: 0;
+  display: flex;
+  height: 3.3rem;
+  bottom: 1.2rem;
+  position: fixed;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  background: #fff;
+  align-items: center;
+  transform: scale(0.2);
+  border-radius: 0.6rem;
+  transform-origin: center;
+  border: 0.3rem solid #10c55d;
+  box-shadow: 0 0 20px rgb(0 0 0 / 50%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.copyMsg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.copyMsg i {
+  color: #10c55d;
+  margin-right: 0.6rem;
+}
